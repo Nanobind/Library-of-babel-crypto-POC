@@ -35,15 +35,15 @@ print(passwordtranslated) #final encoded message with string inbetween
 
 
 
-with open("LOB/filewithsecret.txt", "w")as file: 
+with open("filewithsecret.txt", "w")as file: 
 
     file.writelines(furtherENCODE) #write the encoded message to filewithsecret 
     
-with open("LOB/LOB-stage2.py", "r")as file: #reads the first line to be replaced 
+with open("LOB-stage2.py", "r")as file: #reads the first line to be replaced 
     
     data = file.readlines()
     
 data[0] = f'randoom = "{randoomy}"\n' #writes the first line of stage 2 with the random section that needs to be removed 
 
-with open("LOB/LOB-stage2.py", "w")as file:
+with open("LOB-stage2.py", "w")as file:
     file.writelines(data)
